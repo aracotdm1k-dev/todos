@@ -1,16 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import User from './User'
-import Posts from './Posts'
+import { Provider } from './ThemeContext'
+import Header from './Header'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<User />} />
-        <Route path='/user/:id' element={<Posts />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider>
+      <Header />
+    </Provider>
   )
 }
 
