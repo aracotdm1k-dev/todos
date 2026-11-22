@@ -1,13 +1,14 @@
-import React from 'react'
-import { Provider } from './ThemeContext'
-import Header from './Header'
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './Login';
 
 function App() {
   return (
-    <Provider>
-      <Header />
-    </Provider>
-  )
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
